@@ -8,10 +8,10 @@ Micro-service template to use with my [DevOpsDemo](https://github.com/DevOpsDemo
 * Build in multi-stage Docker container
 * Configuration via environment variables
 * Status passed to API handlers
-* TODO: Logging in JSON
+* Logging in JSON
 * Health-check endpoint
-* TODO: Prometheus metrics
-* TODO: Unit tests with xunit-compatible output
+* Prometheus metrics
+* Unit tests with xunit-compatible output
 * API/integration tests with docker-compose
 
 ### Links ###
