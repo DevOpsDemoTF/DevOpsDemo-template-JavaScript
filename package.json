@@ -7,7 +7,7 @@
   "author": "Adam Szalkowski <adam@szalkowski.de>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha -R spec src/**/*.spec.js",
+    "test": "mocha -R spec --reporter mocha-junit-reporter src/**/*.spec.js",
     "start": "node src/index.js"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "mocha": "^6.2.0",
+    "mocha-junit-reporter": "^1.23.1",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   }
