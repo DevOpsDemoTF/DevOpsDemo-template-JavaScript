@@ -6,16 +6,19 @@ const state = require('./state')
 const metrics = require('./metrics')
 const { config } = require('./config')
 const mediator = new EventEmitter()
+var log = console.error
 
 process.on('uncaughtException', (err) => {
-    console.error('Unhandled Exception', err)
+    log('Unhandled Exception', err)
 })
 
 process.on('uncaughtRejection', (err, promise) => {
-    console.error('Unhandled Rejection', err)
+    log('Unhandled Rejection', err)
 })
 
 mediator.on('state.ready', (state) => {
+    log = state.log.error
+
     new Promise((resolve, reject) => {
         const app = express()
         app.use((err, req, res, next) => {
@@ -27,9 +30,9 @@ mediator.on('state.ready', (state) => {
 
         const server = app.listen(8080, () => resolve(server))
     }).then(app => {
-        console.log(`Service has been started`)
+        state.log.info(`Service has been started`)
         app.on('close', () => {
-            console.log(`Service is shutting down`)
+            state.log.info(`Service is shutting down`)
         })
     })
 })

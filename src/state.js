@@ -1,6 +1,9 @@
 'use strict'
+const logger = require('./logger')
+
 const state = (config) => {
-    return Object.create({ config })
+    const log = logger.create(config)
+    return Object.create({ config, log })
 }
 
 const init = (config, mediator) => {
