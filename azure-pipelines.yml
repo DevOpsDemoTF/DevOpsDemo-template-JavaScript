@@ -10,7 +10,7 @@ resources:
   - repo: self
 
 variables:
-  name: 'devopsdemo-template-java'
+  name: 'devopsdemo-template-javascript'
   tagname: 'latest'
 
 stages:
@@ -43,12 +43,12 @@ stages:
               set -o pipefail
               cd api_tests
               docker-compose run tests || true
-              docker-compose run --entrypoint /bin/cat app /app/test-results.tar.gz | tar -xz -C ..
+              docker-compose run --entrypoint /bin/cat app /app/test-results.xml > ../test-results.xml
             displayName: Run Tests
           - task: PublishTestResults@2
             inputs:
               testResultsFormat: 'JUnit'
-              testResultsFiles: 'test-results/test/*.xml'
+              testResultsFiles: 'test-results.xml'
               testRunTitle: Unit tests
               failTaskOnFailedTests: true
           - task: PublishTestResults@2

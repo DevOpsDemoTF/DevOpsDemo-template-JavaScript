@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 RUN apk --no-cache add dumb-init && \
-    groupadd -r app && useradd -r -g app app && \
+    addgroup -S app && adduser -S app -G app && \
     yarn install --non-interactive --production
 
 FROM base as test
@@ -14,7 +14,7 @@ RUN yarn test
 
 FROM base
 
-COPY --from=test /app/test-results.xml .
+COPY --from=test /app/test-results.xml /app/
 
 EXPOSE 8080
 EXPOSE 9102
