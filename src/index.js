@@ -3,6 +3,7 @@ const { EventEmitter } = require('events')
 const express = require('express')
 const routing = require('./routing')
 const state = require('./state')
+const metrics = require('./metrics')
 const { config } = require('./config')
 const mediator = new EventEmitter()
 
@@ -37,5 +38,6 @@ mediator.on('state.error', (err) => {
     console.error(err)
 })
 
+metrics.init()
 state.init(config, mediator)
 mediator.emit('boot.ready')
