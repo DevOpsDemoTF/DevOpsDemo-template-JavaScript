@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "description": "Micro-service template for JavaScript",
+  "main": "index.js",
+  "repository": "https://github.com/DevOpsDemoTF/DevOpsDemo-template-JavaScript",
+  "author": "Adam Szalkowski <adam@szalkowski.de>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha -R spec src/**/*.spec.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-status": "^1.3.2"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+  }
+}
