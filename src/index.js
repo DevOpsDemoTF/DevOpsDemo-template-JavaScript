@@ -1,9 +1,9 @@
 'use strict'
-const { EventEmitter } = require('events')
-const express = require('express')
-const routing = require('./routing')
-const state = require('./state')
-const { config } = require('./config')
+import { EventEmitter } from 'events'
+import express from 'express'
+import routing from './routing'
+import { init } from './state'
+import { config } from './config'
 const mediator = new EventEmitter()
 
 process.on('uncaughtException', (err) => {
@@ -37,5 +37,5 @@ mediator.on('state.error', (err) => {
     console.error(err)
 })
 
-state.init(config, mediator)
+init(config, mediator)
 mediator.emit('boot.ready')

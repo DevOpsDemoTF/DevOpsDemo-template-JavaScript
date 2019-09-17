@@ -1,10 +1,8 @@
-'use strics'
-const status = require('http-status')
+'use strict'
+import { OK } from 'http-status'
 
-let handler = (state) => {
+export default function handler(state) {
     return (req, res, next) => {
-        res.status(status.OK).send('')
+        res.status(OK).send('')
     }
 }
-
-module.exports = Object.assign({}, { handler })

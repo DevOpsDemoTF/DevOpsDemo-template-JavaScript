@@ -1,4 +1,2 @@
 'use strict'
-let health_check = require('./health_check').handler
-
-module.exports = Object.assign({}, { health_check })
+export { handler as health_check } from './health_check'

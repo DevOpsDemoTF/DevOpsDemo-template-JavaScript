@@ -1,5 +1,5 @@
-const should = require('should')
-const { handler } = require('./health_check')
+import should from 'should'
+import { handler } from './health_check'
 
 describe('Health check handler', () => {
     it('succeeds', () => {

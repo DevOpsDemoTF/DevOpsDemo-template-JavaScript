@@ -1,6 +1,6 @@
 'use strict'
-const handlers = require('./handlers')
+import * as handlers from './handlers'
 
-module.exports = (app, state) => {
+export default function routing(app, state) {
     app.get('/health', handlers.health_check(state))
 }

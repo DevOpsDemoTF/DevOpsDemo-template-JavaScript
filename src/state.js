@@ -1,15 +1,15 @@
 'use strict'
-const state = (config) => {
-    return Object.create({ config })
+class State {
+    constructor(config) {
+        this.config = config
+    }
 }
 
-const init = (config, mediator) => {
+export default function init(config, mediator) {
     mediator.once('boot.ready', () => {
         if (!config) {
             mediator.emit('state.error', new Error('config not supplied!'))
         }
-        mediator.emit('state.ready', state(config))
+        mediator.emit('state.ready', new State(config))
     })
 }
-
-module.exports = Object.assign({}, { init })
