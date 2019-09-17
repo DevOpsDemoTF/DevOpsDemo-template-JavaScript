@@ -1,5 +1,5 @@
 # Template for micro-service in JavaScript #
-[![Build Status](https://dev.azure.com/butzist/DevOpsDemo/_apis/build/status/DevOpsDemoTF.DevOpsDemo-template-JavaScript?branchName=master)](https://dev.azure.com/butzist/DevOpsDemo/_build/latest?definitionId=6&branchName=master)
+[![Build Status](https://dev.azure.com/butzist/DevOpsDemo/_apis/build/status/DevOpsDemoTF.DevOpsDemo-template-JavaScript?branchName=master)](https://dev.azure.com/butzist/DevOpsDemo/_build/latest?definitionId=7&branchName=master)
 
 ### Description ###
 Micro-service template to use with my [DevOpsDemo](https://github.com/DevOpsDemoTF/DevOpsDemo)
